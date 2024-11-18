@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Header from "./components/Header";
+import Tabs from "./components/Tabs";
+import SortingStation from "./pages/SortingStation";
+import Manufacture from "./pages/Manufacture";
+import Storage from "./pages/Storage";
 
 function App() {
+  const [activeTab, setActiveTab] = useState("sorting");
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case "sorting":
+        return <SortingStation />;
+      case "manufacture":
+        return <Manufacture />;
+      case "storage":
+        return <Storage />;
+      default:
+        return <SortingStation />;
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
+      <div className="content">{renderContent()}</div>
     </div>
   );
 }
