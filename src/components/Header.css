@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    align-items: center;
+    color: #435a59;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 15px 0px;
+  }
+  .header div {
+    flex: 1;
+  }
+  .header img {
+    width: 25%;
+  }
+  .header div.logo {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  .header div.logo div.img {
+    display: flex;
+    flex: 2;
+  }
+  .header div.login {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
