@@ -1,9 +1,10 @@
 import React from "react";
-import "./Inventory.css";
+import "./InventoryList.css";
 
 const Inventory = () => {
   return (
     <div className="right-section">
+      hej funguju
       <div className="info-box">
         <div className="info-row">
           <div className="picture">
